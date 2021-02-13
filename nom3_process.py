@@ -1,4 +1,5 @@
 import random as r
+import nom3
 
 class Player:
 
@@ -31,10 +32,29 @@ class PlayerC(Player):
     __identity = 'C'
     accuracy = 0.5
 
+def makgora():
 
-a = PlayerA
-b = PlayerB
 
-a.shot(b)
 
-print(b.state)
+def melee():
+    ## 플레이어 생성
+    a = PlayerA
+    b = PlayerB
+    c = PlayerC
+
+    player = [a, b, c]
+
+    if r.randrange(1,2) > 1:
+        a.shot(b)
+    else:
+        a.shot(c)
+    
+    if r.randrange(1,2) > 1:
+        b.shot(c)
+    else:
+        b.shot(a)
+
+    if r.randrange(1,2) > 1:
+        c.shot(a)
+    else:
+        c.shot(b)
